@@ -1,21 +1,5 @@
-# Curriculum Vitae
-By [SeisPider](https://github.com/SeisPider) and Modified from CV of [SeisMan](https://github.com/seisman/cv)
-originated from Template in [Overleaf](https://www.overleaf.com/latex/templates/a-customised-curve-cv/mvmbhkwsnmwv)
+# Dongdong Tian's Curriculum Vitae
 
-## Description
-Latex codes to create academic CV 
+Template from: https://github.com/leouieda/cv
 
-## Dependence
-- MIKTeX 2.9.6300
-- Git Shell
-
-## Usage
-Open cv folder in Git Shell 
-```
-pdflatex cv.tex
-biber cv
-pdflatex cv.tex 
-```
-
-
-
+Preview my CV [here](cv.pdf).
