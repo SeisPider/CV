@@ -2,92 +2,175 @@
 
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae}
-\newcommand{\FirstName}{Xiao}
-\newcommand{\LastName}{Xiao}
-\newcommand{\Initials}{X}
-\newcommand{\MyName}{\FirstName\ \LastName}
-\newcommand{\MyRole}{PhD Candicate in Geophysics}
-\newcommand{\Xiao}{\textbf{\LastName, \Initials.}}  % For citations
+% \newcommand{\FirstName}{Xiao}
+% \newcommand{\LastName}{Xiao}
+\newcommand{\CNName}{肖晓}
+\newcommand{\MyName}{XIAO Xiao}
+\newcommand{\Role}{Ph.D Candicate}
+\newcommand{\Me}{\textbf{Xiao, X.}}  % For citations
 \newcommand{\Email}{xiaox17@mail.ustc.edu.cn}
-\newcommand{\Website}{http://me.seispider.top/}
-\newcommand{\Phone}{+86-155\,2748\,7105}
-\newcommand{\Affiliation}{
-    Laboratory of Seismology and Physics of Earth's Interior; \\
-    School of Earth and Space Sciences,
-    University of Science and Technology of China
-}
-\newcommand{\Address}{
-    Room 1127, Research Building, No. 96, Jinzhai Road, Hefei, Anhui 230026, China
-}
+\newcommand{\PersonalWebsite}{me.seispider.top}
+\newcommand{\MyGithub}{seispider}
+\newcommand{\ORCID}{0000-0001-7247-561X}
+\newcommand{\Phone}{+86-132\,0569\,9523}
+\newcommand{\Affiliation}{School of Earth and Space Sciences \\ University of Science and Technology of China}
+\newcommand{\Address}{Room 1127, Research Building \\ No. 96, Jinzhai Road, Hefei, Anhui 230026, China}
+
+\newcommand{\sunl}{Sun, L.}
+\newcommand{\wxx}{Wang, X.}
+\newcommand{\csh}{Cheng, S.}
+\newcommand{\wjp}{Wu, J.}
+\newcommand{\wwl}{Wang, W.}
+\newcommand{\wlx}{Wen, L.}
+\newcommand{\yjy}{Yao, J.}
+\newcommand{\msz}{Mao, S.}
+
+% Template configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Disable hyphenation
+\usepackage[none]{hyphenat}
+\usepackage[fontset=fandol]{ctex}
 
 % Control the font size
 \usepackage{anyfontsize}
 
-% Useful macros
+% Icon fonts (requires using xelatex or luatex)
+\usepackage[fixed]{fontawesome5}
+\usepackage{academicons}
+
+% Template variables for styling
+\newcommand{\TablePad}{\vspace{-0.4cm}}
+\newcommand{\SoftwareTitle}[1]{{\bfseries #1}}
+\newcommand{\TableTitle}[1]{{\fontsize{12pt}{0}\selectfont \itshape #1}}
+
+% For fancy and multipage tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% Define a new environment to place all CV entries in a 2-column table.
+% Left column are the dates, right column the entries.
+\usepackage{environ}
+\NewEnviron{EntriesTable}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.10\textwidth}@{\hspace{0.02\textwidth}}p{0.88\textwidth}@{}}
+  \BODY
+\end{tabularx}
+}
+\NewEnviron{EntriesTableExtra}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.10\textwidth}@{\hspace{0.02\textwidth}}p{0.79\textwidth}@{\hspace{0.02\textwidth}}>{\raggedright\arraybackslash}p{0.07\textwidth}}
+  \BODY
+\end{tabularx}
+}
+
+% Macros to add links and mark publications
 \newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
-\newcommand{\invited}{\textbf{[invited]}}
+\newcommand{\DOILink}[1]{\href{https://doi.org/#1}{doi.org/#1}}
+\newcommand{\Website}[1]{\href{https://#1}{#1}}
+\newcommand{\Preprint}[1]{\href{https://doi.org/#1}{\faFilePdf}}
+\newcommand{\Youtube}[1]{\href{https://www.youtube.com/watch?v=#1}{\faYoutube}}
+\newcommand{\GitHub}[1]{\href{https://github.com/#1}{\faGithub}}
+\newcommand{\OrdinaryLink}[1]{\href{#1}{\faLink}}
+
+\newcommand{\Data}[1]{\href{https://doi.org/#1}{\faChartLine}}
+\newcommand{\Slides}[1]{\href{https://#1}{\faTv}}
+\newcommand{\SlidesDOI}[1]{\href{https://doi.org/#1}{\faTv}}
+\newcommand{\PosterDOI}[1]{\href{https://doi.org/#1}{\faImage}}
+\newcommand{\OA}{\thinspace\aiOpenAccess\enspace}
+
+% Macros to set the year and duration on the left column
+\newcommand{\Duration}[2]{\fontsize{9pt}{0}\selectfont #1 -- #2}
+\newcommand{\Year}[1]{\fontsize{9pt}{0}\selectfont #1}
+\newcommand{\Ongoing}{on}
+\newcommand{\Future}{future}
+\newcommand{\Appointment}[4]{\textbf{#1} \newline #2 \newline #3 \newline #4}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
 \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
 
 % Set the page margins
-\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[a4paper,margin=1.5cm,includehead,headsep=5mm]{geometry}
+
+% To get the total page numbers (\pageref{LastPage})
+\usepackage{lastpage}
+
+% No indentation
+\setlength\parindent{0cm}
 
 % Increase the line spacing
-%\renewcommand{\baselinestretch}{1.1}
-\renewcommand{\arraystretch}{1.4}
-\setlength{\parindent}{0pt} % no indent for paragraph
+\renewcommand{\baselinestretch}{1.2}
+% and the spacing between rows in tables
+\renewcommand{\arraystretch}{1.5}
 
 % Remove space between items in itemize and enumerate
 \usepackage{enumitem}
-\setlist{itemsep=0.2em}
+\setlist{nosep}
 
 % Use custom colors
 \usepackage[usenames,dvipsnames]{xcolor}
 
-% Set fonts. Requires compilation with xelatex
+% Set fonts (requires compilation with xelatex)
 \usepackage{fontspec}
-\setmainfont[BoldFont=Times New Roman-Bold]{Times New Roman-Regular}
-\setmonofont{Times New Roman}
+\setmainfont[%
+  Path = fonts/notoserif/,
+  UprightFont = NotoSerif-Regular,
+  BoldFont = NotoSerif-Bold,
+  ItalicFont = NotoSerif-Italic,
+  Extension = .ttf
+]{NotoSerif}
 
-% \usepackage{fontawesome}
-% \setmainfont[BoldFont=SourceSansPro-Bold]{SourceSansPro-Regular}
-% \setmonofont{Source Code Pro}
+
+
+% Set the spacing for sections
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\mdseries} % format
+  {} % label
+  {0pt} % separation (left separation for hang)
+  {} % text before title
+  [\titlerule] % text after title
+\titleformat{\subsection}
+  {\normalfont\large\mdseries} % format
+  {} % label
+  {0pt} % separation (left separation for hang)
+  {} % text before title
+
+% Disable number of sections. Use this instead of "section*" so that the sections still
+% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
+% manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 
 % Set fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\chead{
-    \itshape
-    \fontsize{10pt}{12pt}\selectfont
-    \MyName
-    \hspace{0.2cm} -- \hspace{0.2cm}
-    \Title
-    \hspace{0.2cm} -- \hspace{0.2cm}
-    \monthyear\today
+\lhead{\fontsize{9pt}{10pt}\selectfont
+  \monthyear\today
 }
-\rhead{}
-\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\chead{
+  \fontsize{9pt}{10pt}\selectfont\MyName
+  \hspace{0.2cm} -- \hspace{0.2cm}
+  \Title
+}
+\rhead{\fontsize{9pt}{10pt}\selectfont \thepage{} of \pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 
 % Metadata for the PDF output and control of hyperlinks
 \usepackage[colorlinks=true]{hyperref}
-\hypersetup{ % document metadata
-    pdftitle = {\MyName\ - \Title},
-    pdfauthor = {\MyName},
-    linkcolor=black,
-    citecolor=black,
-    filecolor=black,
-    urlcolor=MidnightBlue,
+\hypersetup{
+  pdftitle={\MyName\ - \Title},
+  pdfauthor={\MyName},
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=black,
+  urlcolor=MidnightBlue
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{MarkerColour}{HTML}{B6073F}
-\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
-
-% numbering items in reversed orders
-\usepackage{etaremune}
 
 \begin{document}
 
@@ -95,35 +178,45 @@
 \thispagestyle{empty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HEADER
-\begin{center}
-    {\fontsize{36pt}{0}\selectfont \MyName}
-    \\[0.5cm]
-    {\fontsize{16pt}{0}\selectfont \MyRole}
-    \\[0.3cm]
-    {\fontsize{10pt}{0}\selectfont
-        \Affiliation
-        \\[0.2cm]
-        \Address
-        \\[0.08cm]
-%       \makefield{\faEnvelopeO}{\href{mailto:\Email}{\texttt{\Email}}}
-%       \, | \,
-%       \makefield{\faGlobe}{\url{\Website}}
-        Email: \href{mailto:\Email}{\texttt{\Email}}
-        \, | \,
-        Website: \url{\Website}
-    }
-\end{center}
+\begin{minipage}[t]{0.6\textwidth}
+{\fontsize{22pt}{0}\selectfont \MyName \hspace{1ex} \kaishu{\CNName}}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+  \begin{flushright}
+  {\fontsize{18pt}{0}\selectfont \Role}
+    % Last updated: \monthyear\today
+  \end{flushright}
+\end{minipage}
+\\[-0.1cm]
+\rule{\textwidth}{2pt}
+\\[0.1cm]
+\begin{minipage}[t]{0.5\textwidth}
+    ORCID: \href{https://orcid.org/\ORCID}{\ORCID}
+    \\
+    Email: \href{mailto:\Email}{\Email}
+    \\
+    Github: \href{https://github.com/\MyGithub}{\MyGithub}
+    \\
+    Website: \Website{\PersonalWebsite}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{flushright}
+    \Affiliation
+    \\
+    \Address
+  \end{flushright}
+\end{minipage}
 
 \input{education}
 \input{interests}
-\input{activities}
 \input{awards}
+\input{activities}
 \input{publications}
-\input{abstracts}
-\input{talks}
-%\input{software}
+\input{presentations}
+% \input{talks}
 \input{skills}
+\input{glossary}
+%\input{software}
 %\input{referees}
 
 \end{document}
