@@ -1,4 +1,4 @@
-all: cv_en.pdf cv_cn.pdf clean
+all: cv_en.pdf clean
 
 install_tex:
 	curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
