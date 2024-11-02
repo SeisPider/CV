@@ -1,8 +1,20 @@
-\section*{专业知识和技能}
+% \usepackage{environ}
+\NewEnviron{SkillsEntriesTable}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}@{\hspace{0.02\textwidth \textbf{:}}}p{0.68\textwidth}@{}}
+  \BODY
+\end{tabularx}
+}
 
-\begin{tabular}{p{0.22\textwidth} p{0.78\textwidth}}
-\textbf{语言} & 中文, 英文. \\
-\textbf{编程技能} & C, Python, Fortran, Matlab, Shell, LaTeX. \\
-\textbf{地震学软件} & SAC, GMT, SOD, ObsPy, TauP, CPS330. \\
-\textbf{地震学模拟} & Reflectivity Method, Modal summation, Generalized Ray Theory.\\
-\end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{专业技能}
+\begin{SkillsEntriesTable}
+\textbf{语言} & 中文，英文 \\
+\textbf{编程} & Python, Fortran, C, Matlab, Shell, LaTeX. \\
+\textbf{地震学工具} & SAC, GMT, SOD, ObsPy, TauP, CPS330. \\
+\textbf{地震学正演工具} & Reflectivity Method, Modal Summation, Generalized Ray Theory, Finite Difference.\\
+\end{SkillsEntriesTable}
+
+% \section*{Expertise \& Skills}
+% \begin{tabular}{p{0.22\textwidth} p{0.78\textwidth}}
+% \end{tabular}

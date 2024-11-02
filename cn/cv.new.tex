@@ -1,30 +1,30 @@
 \documentclass[11pt, a4paper]{article}
 
 % Identifying information
-\newcommand{\Title}{个人简历\ae}
-% \newcommand{\FirstName}{肖}
-% \newcommand{\LastName}{晓}
-\newcommand{\CNName}{}
-\newcommand{\MyName}{Dr. 肖晓}
+\newcommand{\Title}{Curriculum Vit\ae}
+% \newcommand{\FirstName}{Xiao}
+% \newcommand{\LastName}{Xiao}
+\newcommand{\CNName}{肖晓}
+\newcommand{\MyName}{Dr. XIAO Xiao}
 % \newcommand{\Role}{Postdoctral Reasearch Fellow}
-\newcommand{\Role}{博士后研究员}
-\newcommand{\Me}{\textbf{Xiao X.}}  % For citations
-\newcommand{\Email}{xiaox.seis@gmail.com}
+\newcommand{\Role}{Postdoctral Reasearch Fellow}
+\newcommand{\Me}{\textbf{Xiao, X.}}  % For citations
+\newcommand{\Email}{xiaox17@mail.ustc.edu.cn}
 \newcommand{\PersonalWebsite}{me.seispider.top}
 \newcommand{\MyGithub}{seispider}
 \newcommand{\ORCID}{0000-0001-7247-561X}
 \newcommand{\Phone}{+86-132\,0569\,9523}
-\newcommand{\Affiliation}{数理科学学院\\ 新加坡南洋理工大学}
-\newcommand{\Address}{南洋路21号，新加坡}
+\newcommand{\Affiliation}{School of Physical and Mathematical Sciences \\ Nanyang Technological University}
+\newcommand{\Address}{21 NanYang Link, Singapore}
 
-\newcommand{\sunl}{Sun L.}
-\newcommand{\wxx}{Wang X.}
-\newcommand{\csh}{Cheng S.}
-\newcommand{\wjp}{Wu J.}
-\newcommand{\wwl}{Wang W.}
-\newcommand{\wlx}{Wen L.}
-\newcommand{\yjy}{Yao J.}
-\newcommand{\msz}{Mao S.}
+\newcommand{\sunl}{Sun, L.}
+\newcommand{\wxx}{Wang, X.}
+\newcommand{\csh}{Cheng, S.}
+\newcommand{\wjp}{Wu, J.}
+\newcommand{\wwl}{Wang, W.}
+\newcommand{\wlx}{Wen, L.}
+\newcommand{\yjy}{Yao, J.}
+\newcommand{\msz}{Mao, S.}
 
 % Template configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,14 +83,13 @@
 % Macros to set the year and duration on the left column
 \newcommand{\Duration}[2]{\fontsize{9pt}{0}\selectfont #1 -- #2}
 \newcommand{\Year}[1]{\fontsize{9pt}{0}\selectfont #1}
-\newcommand{\Ongoing}{}
+\newcommand{\Ongoing}{on}
 \newcommand{\Future}{future}
 \newcommand{\Appointment}[4]{\textbf{#1} \newline #2 \newline #3 \newline #4}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
-% \newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
-\newdateformat{monthyear}{ \THEMONTH/\THEYEAR}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
 
 % Set the page margins
 \usepackage[a4paper,margin=1.5cm,includehead,headsep=5mm]{geometry}
@@ -186,7 +185,7 @@
 \begin{minipage}[t]{0.4\textwidth}
   \begin{flushright}
   {\fontsize{18pt}{0}\selectfont}
-    更新至 \monthyear\today
+    Last updated: \monthyear\today
   \end{flushright}
 \end{minipage}
 \\[-0.1cm]
@@ -195,11 +194,11 @@
 \begin{minipage}[t]{0.5\textwidth}
     ORCID: \href{https://orcid.org/\ORCID}{\ORCID}
     \\
+    Email: \href{mailto:\Email}{\Email}
+    \\
     Github: \href{https://github.com/\MyGithub}{\MyGithub}
     \\
-    邮箱: \href{mailto:\Email}{\Email}
-    \\
-    网站: \Website{\PersonalWebsite}
+    Website: \Website{\PersonalWebsite}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
   \begin{flushright}

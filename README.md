@@ -7,6 +7,7 @@ These are the LaTeX sources for my academic CV.
 Download my CV:
 
 - [English version](./en/cv.pdf)
+- [Chinese version](./cn/cv.pdf)
 
 
 ## Build
